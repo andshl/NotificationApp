@@ -10,5 +10,6 @@ public class EmailSendService {
 
     public void send() {
         log.debug("Message sent!");
+        System.out.println("Service message sent");
     }
 }

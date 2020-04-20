@@ -5,11 +5,16 @@ zuul:
     socket-timeout-millis: 20000
 
   routes:
-    notification-service:
+    email-notification-service:
+      url: http://localhost:8000
       path: /notification/email/**
       serviceId: email-notification-service
       stripPrefix: false
       sensitiveHeaders:
+
+ribbon:
+  eureka:
+    enabled: false
 
 server:
   port: 4000

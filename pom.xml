@@ -30,7 +30,6 @@
     <modules>
         <module>Configuration</module>
         <module>PostNotificationService</module>
-        <module>Configuration</module>
         <module>EmailNotificationService</module>
         <module>SmsNotificationService</module>
         <module>Gateway</module>

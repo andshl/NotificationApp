@@ -1,0 +1,15 @@
+zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+
+  routes:
+    notification-service:
+      path: /notification/email/**
+      serviceId: email-notification-service
+      stripPrefix: false
+      sensitiveHeaders:
+
+server:
+  port: 4000

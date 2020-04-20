@@ -1,0 +1,33 @@
+version: '2.1'
+services:
+  config:
+    image: andshl/notificationapp-config
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  gateway:
+    image: andshl/notificationapp-gateway
+    restart: always
+    depends_on:
+      config:
+        condition: service_healthy
+    ports:
+      - 80:4000
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  email-notification-service:
+    image: andshl/notificationapp-email-notification-service
+    restart: always
+    depends_on:
+      config:
+        condition: service_healthy
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"

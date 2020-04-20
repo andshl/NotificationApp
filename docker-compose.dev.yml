@@ -1,0 +1,14 @@
+version: '2.1'
+services:
+  config:
+    build: Configuration
+    ports:
+      - 8888:8888
+
+  gateway:
+    build: Gateway
+
+  email-notification-service:
+    build: EmailNotificationService
+    ports:
+      - 8000:8000

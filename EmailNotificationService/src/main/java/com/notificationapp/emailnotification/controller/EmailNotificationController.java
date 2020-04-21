@@ -18,12 +18,12 @@ public class EmailNotificationController {
         this.emailSendService = emailSendService;
     }
 
-    @GetMapping("/{id}")
-    public String getEmailNotification(@PathVariable int id) {
+    @GetMapping("/email")
+    public String getEmailNotification() {
         log.debug("Message sent!");
         System.out.println("Service message sent");
-        System.out.println("Controller " + id);
+        System.out.println("Controller ");
         //emailSendService.send();
-        return "Return from controller! " + id;
+        return "Return from controller! ";
     }
 }

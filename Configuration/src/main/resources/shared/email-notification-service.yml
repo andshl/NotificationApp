@@ -1,4 +1,4 @@
 server:
   servlet:
-    context-path: /notification/email
+    context-path: /notification
   port: 8000

@@ -6,8 +6,8 @@ zuul:
 
   routes:
     email-notification-service:
-      url: http://localhost:8000
-      path: /notification/email/**
+      url: http://localhost:8000/notification
+      path: /email/**
       serviceId: email-notification-service
       stripPrefix: false
       sensitiveHeaders:

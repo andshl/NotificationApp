@@ -1,13 +1,15 @@
 package com.notificationapp.emailnotification.controller;
 
 import com.notificationapp.emailnotification.service.EmailSendService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class EmailNotificationController {
+
+    private final Logger log = LoggerFactory.getLogger(getClass());
 
     private final EmailSendService emailSendService;
 
@@ -16,10 +18,12 @@ public class EmailNotificationController {
         this.emailSendService = emailSendService;
     }
 
-    @RequestMapping(value = "notification/email")
-    public String getEmailNotification() {
-        System.out.println("Controller");
-        emailSendService.send();
-        return "Return from controller!";
+    @GetMapping("/{id}")
+    public String getEmailNotification(@PathVariable int id) {
+        log.debug("Message sent!");
+        System.out.println("Service message sent");
+        System.out.println("Controller " + id);
+        //emailSendService.send();
+        return "Return from controller! " + id;
     }
 }

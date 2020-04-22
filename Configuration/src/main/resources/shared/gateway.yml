@@ -1,20 +1,27 @@
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
+
 zuul:
   ignoredServices: '*'
   host:
-    connect-timeout-millis: 20000
-    socket-timeout-millis: 20000
+    connect-timeout-millis: 200000
+    socket-timeout-millis: 200000
 
   routes:
     email-notification-service:
-      url: http://localhost:8000/notification
-      path: /email/**
+      path: notification/email/**
       serviceId: email-notification-service
       stripPrefix: false
       sensitiveHeaders:
 
 ribbon:
-  eureka:
-    enabled: false
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
 
 server:
   port: 4000

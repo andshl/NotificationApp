@@ -33,6 +33,7 @@
         <module>EmailNotificationService</module>
         <module>SmsNotificationService</module>
         <module>Gateway</module>
+        <module>Registry</module>
     </modules>
 
 </project>

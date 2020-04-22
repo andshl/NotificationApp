@@ -21,6 +21,19 @@ services:
         max-size: "10m"
         max-file: "10"
 
+  registry:
+    image: andshl/notificationapp-registry
+    restart: always
+    depends_on:
+      config:
+        condition: service_healthy
+    ports:
+      - 8761:8761
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
   email-notification-service:
     image: andshl/notificationapp-email-notification-service
     restart: always

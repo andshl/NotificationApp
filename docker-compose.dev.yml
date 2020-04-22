@@ -8,6 +8,9 @@ services:
   gateway:
     build: Gateway
 
+  registry:
+    build: registry
+
   email-notification-service:
     build: EmailNotificationService
     ports:

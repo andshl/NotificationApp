@@ -1,12 +1,15 @@
 spring:
   application:
     name: email-notification-service
-  cloud:
-    config:
-      uri: http://config:8888
-      fail-fast: true
 
-logging:
-  level:
-    web: debug
-    root: debug
+server:
+  port: 8000
+  servlet:
+    context-path: /notification
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

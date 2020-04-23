@@ -9,7 +9,7 @@ services:
     build: Gateway
 
   registry:
-    build: registry
+    build: Registry
 
   email-notification-service:
     build: EmailNotificationService

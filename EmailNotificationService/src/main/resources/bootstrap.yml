@@ -8,8 +8,12 @@ server:
     context-path: /email-service
 
 eureka:
-  instance:
-    prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: http://registry:8761/eureka/
+      defaultZone: http://registry:8761/eureka
+    healthcheck:
+      enabled: true
+  instance:
+    preferIpAddress: true
+    statusPageUrlPath: /actuator/info
+    healthCheckUrlPath: /actuator/health

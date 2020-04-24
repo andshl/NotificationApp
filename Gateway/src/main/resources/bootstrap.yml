@@ -1,9 +1,9 @@
-server:
-  port: 8079
-
 spring:
   application:
     name: gateway
+
+server:
+  port: 8079
 
 eureka:
   client:
@@ -22,4 +22,8 @@ zuul:
     email-notification-service:
       path: /email-service/**
       serviceId: email-notification-service
+      strip-prefix: false
+    sms-notification-service:
+      path: /sms-service/**
+      serviceId: sms-notification-service
       strip-prefix: false

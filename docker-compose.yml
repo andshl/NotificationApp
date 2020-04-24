@@ -37,3 +37,17 @@ services:
       options:
         max-size: "10m"
         max-file: "10"
+
+  sms-notification-service:
+    image: andshl/notificationapp-sms-notification-service
+    build: SmsNotificationService
+    ports:
+      - 8001:8001
+    restart: always
+    depends_on:
+      - registry
+      - gateway
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"

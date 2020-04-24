@@ -14,7 +14,7 @@ public class EmailNotificationController {
         this.emailSendService = emailSendService;
     }
 
-    @RequestMapping(value = "/email", method=RequestMethod.GET)
+    @GetMapping(value = "/email")
     public String getEmailNotification(@RequestParam(value = "from") String from, @RequestParam(value = "subject", required = false) String subject, @RequestParam(value = "to") String to, @RequestParam(value = "msg", required = false) String message) {
         return emailSendService.send(from, to, subject, message);
     }

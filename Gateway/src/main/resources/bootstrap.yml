@@ -1,6 +1,12 @@
+server:
+  port: 8079
+
+spring:
+  application:
+    name: gateway
+
 eureka:
   client:
-    #    fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
     healthcheck:
@@ -10,20 +16,10 @@ eureka:
     statusPageUrlPath: /actuator/info
     healthCheckUrlPath: /actuator/health
 
-server:
-  port: 8079
-
-spring:
-  application:
-    name: ROUTER-SERVICE
 zuul:
   ignoredServices: '*'
   routes:
-    hello-service:
-      path: /SIMS/hello-service/v1/**
-      service-id: hello-service
-      strip-prefix: false
     email-notification-service:
-      path: /notification/**
+      path: /email-service/**
       serviceId: email-notification-service
       strip-prefix: false

@@ -5,7 +5,7 @@ spring:
 server:
   port: 8000
   servlet:
-    context-path: /notification
+    context-path: /email-service
 
 eureka:
   instance:

@@ -27,3 +27,7 @@ zuul:
       path: /sms-service/**
       serviceId: sms-notification-service
       strip-prefix: false
+    post-notification-service:
+      path: /post-service/**
+      serviceId: post-notification-service
+      strip-prefix: false

@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: post-notification-service
+
+server:
+  port: 8002
+  servlet:
+    context-path: /post-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://registry:8761/eureka
+    healthcheck:
+      enabled: true
+  instance:
+    preferIpAddress: true
+    statusPageUrlPath: /actuator/info
+    healthCheckUrlPath: /actuator/health

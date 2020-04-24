@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class EmailSendService {
+
     private final Logger log = LoggerFactory.getLogger(getClass());
 
     public String send(String from, String to, String subject, String message) {

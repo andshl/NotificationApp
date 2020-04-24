@@ -39,10 +39,10 @@
  * `phone` - телефон получателя
  * `msg` - текст сообщения
 
-Запрос на Gateway с маршрутизацией в SmsNotificationService:
+Запрос на Gateway с маршрутизацией в SmsNotificationService:  
 `curl -X GET "http://localhost:8079/sms-service/sms/89997776655/new"`
 
-Запрос на SmsNotificationService:
+Запрос на SmsNotificationService:  
 `curl -X GET "http://localhost:8001/sms-service/sms/89997776655/new"`
 
 Информация пишется в лог контейнера. На запрос `curl` возвращается `SMS sent successfully!`.
